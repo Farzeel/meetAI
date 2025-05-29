@@ -47,7 +47,7 @@ if(session){
     <input placeholder="name" className="border" type="text" value={name} onChange={(e)=>setName(e.target.value)}/>
     <input placeholder="email" className="border" type="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
     <input placeholder="password" className="border" type="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
-    <button className="cursor-pointer" onClick={handleSubmit}>SignUp</button>
+    <button className="cursor-pointer " onClick={handleSubmit}>SignUp</button>
    </div>
     </>
 
