@@ -69,11 +69,23 @@ export default function SignUpView() {
       },
 });
   };
+  const handleSocialLogin = (provider: "github" | "google") => {
+    setIsLoading(true)
+    authClient.signIn.social({
+     provider:provider,
 
-  const handleSocialLogin = (provider: string) => {
-    console.log(`Login with ${provider}`);
+ }, {
+
+     onSuccess: (ctx) => {
+       setIsLoading(false)
+         router.push("/")
+     },
+     onError: (ctx) => {
+       setIsLoading(false)
+       setShowError(ctx.error.message);
+     },
+});
   };
-
   return (
     <>
       <div className="flex flex-col gap-6  ">
@@ -194,7 +206,7 @@ export default function SignUpView() {
                   <div className="grid grid-cols-2 gap-3">
                     <button
                       type="button"
-                      onClick={() => handleSocialLogin("Google")}
+                      onClick={() => handleSocialLogin("google")}
                       className="cursor-pointer w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors"
                     >
                       <FcGoogle className="w-5 h-5 mr-2"></FcGoogle>
@@ -202,7 +214,7 @@ export default function SignUpView() {
                     </button>
                     <button
                       type="button"
-                      onClick={() => handleSocialLogin("GitHub")}
+                      onClick={() => handleSocialLogin("github")}
                       className="cursor-pointer w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors"
                     >
                       <FaGithub className="w-5 h-5 mr-2"></FaGithub>
