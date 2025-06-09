@@ -226,7 +226,7 @@ export default function SignUpView() {
                     Already have an account?{' '}
                     <Link
                       href={"/sign-in"}
-                      className="font-medium text-gray-900 hover:text-gray-700 underline focus:outline-none focus:ring-2 focus:ring-green-500 rounded px-1"
+                      className="font-medium text-gray-900 hover:text-gray-700 underline  rounded px-1"
                       
                     >
                       Sign In
