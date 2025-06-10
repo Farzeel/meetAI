@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { schema } from '@dicebear/core';
 import { micah } from '@dicebear/collection';
 
+
 export const HomeView = () => {
  const router  = useRouter()
     
@@ -23,7 +24,7 @@ export const HomeView = () => {
 
   return (
 <>
-
+   
         <h1>{session.user.name}</h1>
         </>
   )
